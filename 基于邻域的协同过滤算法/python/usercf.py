@@ -180,5 +180,7 @@ if __name__ == '__main__':
     ratingfile = "../../data/movielens/ml-1m/ratings.dat"
     usercf = UserBasedCF()
     usercf.generate_dataset(ratingfile)
-    # usercf.calc_user_sim()
-    # usercf.evaluate()
+    usercf.calc_user_sim()
+    # 给用户1推荐
+    usercf.recommend("1")
+    usercf.evaluate()

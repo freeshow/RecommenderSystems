@@ -1,9 +1,3 @@
-#-*- coding: utf-8 -*-
-'''
-Created on 2015-06-22
-
-@author: Lockvictor
-'''
 import sys
 import random
 import math
@@ -169,8 +163,10 @@ class ItemBasedCF(object):
 
 
 if __name__ == '__main__':
-    ratingfile = os.path.join('ml-1m', 'ratings.dat')
+    ratingfile = "../../data/movielens/ml-1m/ratings.dat"
     itemcf = ItemBasedCF()
     itemcf.generate_dataset(ratingfile)
     itemcf.calc_movie_sim()
+    # 给用户1推荐
+    itemcf.recommend("1")
     itemcf.evaluate()
